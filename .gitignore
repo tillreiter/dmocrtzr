@@ -9,3 +9,4 @@ test
 .travis.yml
 karma.conf.js
 karma-e2e.conf.js
+.idea
