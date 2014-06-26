@@ -1,0 +1,11 @@
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+test
+.editorconfig
+.jshintrc
+.travis.yml
+karma.conf.js
+karma-e2e.conf.js

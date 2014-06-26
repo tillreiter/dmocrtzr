@@ -1,0 +1,79 @@
+<h2>So you want to know if this person would be a good fit. Let's get started!</h2>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 panel panel-default">
+      <div class="panel-body">
+        <progressbar class="progress-striped active" value="{{progress}}"
+                     type="info"><i>{{progress}}</i></progressbar>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <h4>Are we talking about a female or male applicant?</h4>
+
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="sex" btn-radio="'female'">female</label>
+      <label class="btn btn-primary" ng-model="sex" btn-radio="'male'">male</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="sex">
+    <h4>Does everyone need to say "Go for it"?</h4>
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="votingStyle" btn-radio="'absolute'">Absolute voting</label>
+      <label class="btn btn-primary" ng-model="votingStyle" btn-radio="'democratic'">Democrativ voting</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-animate="'dn-fade'" ng-show="votingStyle" ng-click="addProgress">
+    <h4>Should the final voting be conducted anonymously?</h4>
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="votingPrivacy" btn-radio="'anonymous'">Anonymous voting</label>
+      <label class="btn btn-primary" ng-model="votingPrivacy" btn-radio="'public'">Public voting</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="votingPrivacy">
+    <h4>Do you want a pre-voting phase do gather opinions and impressions?</h4>
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="votingPreSurveyIncluded" btn-radio="'preVoting'">Include pre-voting</label>
+      <label class="btn btn-primary" ng-model="votingPreSurveyIncluded" btn-radio="'noPreVoting'">Just voting</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="votingPreSurveyIncluded">
+    <h4>How long is the pre-voting phase?</h4>
+
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="votingPreSurveyDuration" btn-radio="'1'">1 day</label>
+      <label class="btn btn-primary" ng-model="votingPreSurveyDuration" btn-radio="'2'">2 days</label>
+      <label class="btn btn-primary" ng-model="votingPreSurveyDuration" btn-radio="'3'">3 days</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="votingPreSurveyDuration">
+    <h4>How long is the voting phase?</h4>
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="votingSurveyDuration" btn-radio="'1'">1 day</label>
+      <label class="btn btn-primary" ng-model="votingSurveyDuration" btn-radio="'2'">2 days</label>
+      <label class="btn btn-primary" ng-model="votingSurveyDuration" btn-radio="'3'">3 days</label>
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="votingSurveyDuration">
+    <h2>Do you want to ask anything besides "Would you hire that person?"</h2>
+
+    <div class="btn-group">
+      <label class="btn btn-primary" ng-model="includeExtraQestions" btn-radio="'yes'" ng-click="submitForm()">Yes, I have extra
+        questions</label>
+      <label class="btn btn-primary" ng-model="includeExtraQestions" btn-radio="'no'" ng-click="submitForm()">Thanks, that's
+        enough</label>
+    </div>
+  </div>
+
+</div>
+
