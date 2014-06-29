@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('dmocrtzrApp')
-  .controller('NewSurveyCtrl', ['$scope', function ($scope) {
+  .controller('NewSurveyCtrl', ['$scope', '$state', function ($scope, $state) {
+
+    $scope.submitNewSurvey = function () {
+      $state.go('app.preSurvey');
+    };
+
     $scope.sex = "";
     $scope.votingStyle = "";
     $scope.votingPrivacy = "";
@@ -14,6 +19,7 @@ angular.module('dmocrtzrApp')
 
     $scope.progress = 0;
     $scope.setProgress = function () {
+
       function calculateProgress (questionNumber){
         $scope.progress = Math.floor((questionNumber/ $scope.questionsTotal)*100);
         return $scope.progress;

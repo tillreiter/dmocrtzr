@@ -11,12 +11,12 @@ angular.module('dmocrtzrApp', [
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // For any unmatched url, send to /
-        $urlRouterProvider.otherwise('/app/newSurvey')
+        $urlRouterProvider.otherwise('/app/newSurvey');
 
         $stateProvider
             .state('app', {
                 url: '/app',
-                templateUrl: '/views/app.html',
+                templateUrl: '/views/app_layout.html',
                 abstract: true
             })
 
@@ -31,4 +31,4 @@ angular.module('dmocrtzrApp', [
                 templateUrl: '/views/preSurvey.html',
                 controller: 'PreSurveyCtrl'
             })
-    })
+    });

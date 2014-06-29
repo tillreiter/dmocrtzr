@@ -12,6 +12,8 @@
 
   </div>
 
+  <button ng-click="submitNewSurvey()">state</button>
+
   <div class="row">
     <h4>Are we talking about a female or male applicant?</h4>
 
@@ -65,7 +67,7 @@
   </div>
 
   <div class="row animated fadeInUp" ng-show="votingSurveyDuration" ng-click="setProgress()">
-    <h2>Do you want to ask anything besides "Would you hire that person?"</h2>
+    <h4>Do you want to ask anything besides "Would you hire that person?"</h4>
 
     <div class="btn-group">
       <label class="btn btn-primary" ng-model="includeExtraQestions" btn-radio="'yes'" ng-click="submitForm()">Yes, I have extra
@@ -76,4 +78,3 @@
   </div>
 
 </div>
-
