@@ -19,6 +19,8 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
   </head>
   <body ng-app="dmocrtzrApp">
     <!--[if lt IE 7]>
@@ -26,7 +28,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container ui-view:"{app}"></div>
+    <div class="container ui-view"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -57,6 +59,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/ngAnimate-animate.css/animate.js"></script>
+    <script src="bower_components/angular-google-chart/ng-google-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -66,7 +69,10 @@
         <script src="scripts/controllers/startDmo.js"></script>
         <script src="scripts/controllers/newSurvey.js"></script>
         <script src="scripts/controllers/PreSurvey.js"></script>
+        <script src="scripts/controllers/Results.js"></script>
         <!-- endbuild -->
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-</body>
+
+
+  </body>
 </html>
