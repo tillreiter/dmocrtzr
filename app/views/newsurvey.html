@@ -13,6 +13,14 @@
   </div>
 
   <div class="row">
+    <h4>What's the last name of the applicant?</h4>
+
+    <div class="form-group">
+      <input type="text" ng-model="lastName" ng-change="setProgress()" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+
+  <div class="row animated fadeInUp" ng-show="lastName" ng-click="setProgress()">
     <h4>Are we talking about a female or male applicant?</h4>
 
     <div class="btn-group" ng-click="setProgress()">

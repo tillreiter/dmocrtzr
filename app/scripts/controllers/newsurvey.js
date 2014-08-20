@@ -7,6 +7,7 @@ angular.module('dmocrtzrApp')
       $state.go('app.preSurvey');
     };
 
+    $scope.lastName = "";
     $scope.sex = "";
     $scope.votingStyle = "";
     $scope.votingPrivacy = "";
@@ -15,7 +16,7 @@ angular.module('dmocrtzrApp')
     $scope.votingSurveyDuration = "";
     $scope.includeExtraQestions = "";
 
-    $scope.questionsTotal = 7;
+    $scope.questionsTotal = 8;
 
     $scope.progress = 0;
     $scope.setProgress = function () {
@@ -25,26 +26,29 @@ angular.module('dmocrtzrApp')
         return $scope.progress;
       }
 
-      if ($scope.sex !== "") {
+      if ($scope.lastName !== "") {
         calculateProgress(1);
       }
-      if ($scope.votingStyle !== "") {
+      if ($scope.sex !== "") {
         calculateProgress(2);
       }
-      if ($scope.votingPrivacy !== "") {
+      if ($scope.votingStyle !== "") {
         calculateProgress(3);
       }
-      if ($scope.votingPreSurveyIncluded !== "") {
+      if ($scope.votingPrivacy !== "") {
         calculateProgress(4);
       }
-      if ($scope.votingPreSurveyDuration !== "") {
+      if ($scope.votingPreSurveyIncluded !== "") {
         calculateProgress(5);
       }
-      if ($scope.votingSurveyDuration !== "") {
+      if ($scope.votingPreSurveyDuration !== "") {
         calculateProgress(6);
       }
-      if ($scope.includeExtraQestions !== "") {
+      if ($scope.votingSurveyDuration !== "") {
         calculateProgress(7);
+      }
+      if ($scope.includeExtraQestions !== "") {
+        calculateProgress(8);
       }
     }
   }]);
