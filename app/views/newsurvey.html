@@ -3,7 +3,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 panel panel-default">
+    <div ng-show="progress > 0" class="col-md-6 col-md-offset-3 panel panel-default animated fadeInUp">
       <div class="panel-body">
         <progressbar class="progress-striped active" value="progress"
                      type="info"><i>{{progress}}%</i></progressbar>
@@ -16,11 +16,11 @@
     <h4>What's the last name of the applicant?</h4>
 
     <div class="form-group">
-      <input type="text" ng-model="lastName" ng-change="setProgress()" class="form-control" placeholder="Last name">
+      <input type="text" ng-model="lastName" ng-change="setProgress(1)" class="form-control" placeholder="Last name">
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="lastName" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 1" ng-click="setProgress(2)">
     <h4>Are we talking about a female or male applicant?</h4>
 
     <div class="btn-group" ng-click="setProgress()">
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="sex" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 2" ng-click="setProgress(3)">
     <h4>Does everyone need to say "Go for it"?</h4>
     <div class="btn-group">
       <label class="btn btn-primary" ng-model="votingStyle" btn-radio="'absolute'">Absolute voting</label>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="votingStyle" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 3" ng-click="setProgress(4)">
     <h4>Should the final voting be conducted anonymously?</h4>
     <div class="btn-group">
       <label class="btn btn-primary" ng-model="votingPrivacy" btn-radio="'anonymous'">Anonymous voting</label>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="votingPrivacy" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 4" ng-click="setProgress(5)">
     <h4>Do you want a pre-voting phase do gather opinions and impressions?</h4>
     <div class="btn-group">
       <label class="btn btn-primary" ng-model="votingPreSurveyIncluded" btn-radio="'preVoting'">Include pre-voting</label>
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="votingPreSurveyIncluded" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 5" ng-click="setProgress(6)">
     <h4>How long is the pre-voting phase?</h4>
 
     <div class="btn-group">
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="votingPreSurveyDuration" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 6" ng-click="setProgress(7)">
     <h4>How long is the voting phase?</h4>
     <div class="btn-group">
       <label class="btn btn-primary" ng-model="votingSurveyDuration" btn-radio="'1'">1 day</label>
@@ -72,7 +72,7 @@
     </div>
   </div>
 
-  <div class="row animated fadeInUp" ng-show="votingSurveyDuration" ng-click="setProgress()">
+  <div class="row animated fadeInUp" ng-show="currentQuestion > 7" ng-click="setProgress(8)">
     <h4>Do you want to ask anything besides "Would you hire that person?"</h4>
 
     <div class="btn-group">

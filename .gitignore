@@ -9,5 +9,5 @@ test
 .travis.yml
 karma.conf.js
 karma-e2e.conf.js
-.idea/workspace.xml
+**/.idea/workspace.xml
 .idea

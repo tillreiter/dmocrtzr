@@ -17,38 +17,14 @@ angular.module('dmocrtzrApp')
     $scope.includeExtraQestions = "";
 
     $scope.questionsTotal = 8;
+    $scope.currentQuestion = 1;
 
     $scope.progress = 0;
-    $scope.setProgress = function () {
-
-      function calculateProgress (questionNumber){
-        $scope.progress = Math.floor((questionNumber/ $scope.questionsTotal)*100);
+    $scope.setProgress = function (questionNumber) {
+      if (questionNumber === $scope.currentQuestion) {
+        $scope.progress = Math.floor((questionNumber / $scope.questionsTotal) * 100);
+        $scope.currentQuestion += 1;
         return $scope.progress;
-      }
-
-      if ($scope.lastName !== "") {
-        calculateProgress(1);
-      }
-      if ($scope.sex !== "") {
-        calculateProgress(2);
-      }
-      if ($scope.votingStyle !== "") {
-        calculateProgress(3);
-      }
-      if ($scope.votingPrivacy !== "") {
-        calculateProgress(4);
-      }
-      if ($scope.votingPreSurveyIncluded !== "") {
-        calculateProgress(5);
-      }
-      if ($scope.votingPreSurveyDuration !== "") {
-        calculateProgress(6);
-      }
-      if ($scope.votingSurveyDuration !== "") {
-        calculateProgress(7);
-      }
-      if ($scope.includeExtraQestions !== "") {
-        calculateProgress(8);
       }
     }
   }]);
